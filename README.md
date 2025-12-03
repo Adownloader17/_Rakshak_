@@ -6,6 +6,12 @@ Rakshak is a small security-focused project that provides simple feature extract
 
 This README covers the repository overview, setup for local development (backend + frontend), and quick commands to run the API and UI.
 
+# Rakshak
+
+Rakshak is a small security-focused project that provides simple feature extraction and ML models for detecting web attacks (phishing URLs and XSS payloads). It contains backend API code, model training scripts, example datasets, and a lightweight React frontend demo.
+
+This README covers the repository overview, setup for local development (backend + frontend), and quick commands to run the API and UI.
+
 ## Quick links
 - Backend code: `src/`
 - Frontend UI: `rakshak-ui/`
@@ -18,9 +24,9 @@ This README covers the repository overview, setup for local development (backend
 - `data/processed/` – processed datasets created by experiments.
 - `notebooks/` – Jupyter notebooks used during development.
 - `src/` – backend code (FastAPI app, feature extractors, training scripts, model artifacts).
-	- `src/api/app.py` – FastAPI application exposing `/predict/xss` and `/predict/url` endpoints.
-	- `src/features/` – feature extraction helpers: `url_features.py`, `xss_features.py`.
-	- `src/models/` – training scripts and saved models.
+  - `src/api/app.py` – FastAPI application exposing `/predict/xss` and `/predict/url` endpoints.
+  - `src/features/` – feature extraction helpers: `url_features.py`, `xss_features.py`.
+  - `src/models/` – training scripts and saved models.
 - `rakshak-ui/` – React + Vite frontend demo that calls the local API.
 
 ## Setup (backend)
@@ -58,7 +64,11 @@ Ensure `data/raw/` contains the expected CSV files before running training.
 
 ## Frontend (rakshak-ui)
 
-1. Open a new terminal and start the UI:
+The `rakshak-ui` folder contains a lightweight React + Vite demo that calls the local FastAPI backend (`http://127.0.0.1:8000` by default). The UI provides two tabs: XSS payload testing and URL phishing checks.
+
+### Quick start (development)
+
+From the repository root or within `rakshak-ui/`:
 
 ```powershell
 cd rakshak-ui
@@ -66,9 +76,38 @@ npm install
 npm run dev
 ```
 
-2. The UI expects the backend at `http://127.0.0.1:8000` by default. Verify `rakshak-ui/src/config.js` if you need a different base URL.
+Open the dev server URL (usually `http://localhost:5173`). The UI reads the API base URL from `src/config.js` (default: `http://127.0.0.1:8000`).
 
-3. If you are using Tailwind CSS, ensure `tailwind.config.js` and PostCSS are configured (this project includes a basic setup).
+### Build / Preview
+
+```powershell
+npm run build
+npm run preview
+```
+
+### Tailwind CSS
+
+This project may use Tailwind classes. To enable Tailwind in a Vite project if needed:
+
+```powershell
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+Then ensure `index.css` imports Tailwind and `tailwind.config.js` content paths include `src/**/*`.
+
+### Configuration
+
+- `src/config.js` exposes `API_BASE` — change this if your API runs elsewhere.
+
+### Lint & Common issues
+
+- ESLint can flag unused variables. A recent change replaced `catch (e)` with `catch { ... }` in `src/App.jsx` to avoid an unused `e` warning.
+
+### Notes
+
+- Ensure the backend API is running (`uvicorn src.api.app:app --reload --port 8000`) when testing the UI locally.
+- CORS is enabled broadly in the example `app.py` to simplify local development; tighten it for production.
 
 ## Workspace analysis (short)
 
@@ -94,6 +133,6 @@ $env:PYTHONPATH='C:\path\to\Rakshak\rakshak'; .\.venv\Scripts\python.exe src\mod
 
 ---
 
-If you'd like, I can apply the recommendations: add package `__init__.py` files, add a minimal `url_features.py` and `xss_features.py` implementation, or add scripts to automate training and serving.
+If you'd like, I can apply the recommendations: add package `__init__.py` files, add a minimal `url_features.py` and `xss_features.py` implementation, or add scripts to automate training and serving the API.
 
 
