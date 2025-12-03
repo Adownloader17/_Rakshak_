@@ -1,34 +1,21 @@
-@"
-# Python
-__pycache__/
-*.pyc
+# Python virtualenv
 .venv/
 venv/
-env/
-.env
-*.env
+__pycache__/
 
-# Node / React
+# Node / frontend
 node_modules/
-rakshak-ui/node_modules/
 dist/
 build/
 
-# Data - DO NOT PUSH RAW DATA
+# Data (do NOT keep raw data in repo)
 data/raw/
-data/raw/*
 data/processed/
-*.csv
-*.zip
-*.xlsx
 
-# Logs
+# IDE/editor
+.vscode/
 *.log
 
 # OS
 .DS_Store
 Thumbs.db
-
-# IDE
-.vscode/
-"@ | Out-File -Encoding utf8 .gitignore
