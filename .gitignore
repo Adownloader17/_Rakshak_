@@ -1,8 +1,10 @@
+@"
 # Python
 .venv/
 venv/
 __pycache__/
 *.pyc
+.env
 
 # Node
 node_modules/
@@ -10,7 +12,7 @@ dist/
 build/
 .vite/
 
-# Data (do NOT keep raw datasets in repo)
+# Data
 data/raw/
 data/processed/
 
@@ -21,6 +23,6 @@ data/processed/
 Thumbs.db
 *.log
 
-# Others
-.env
-*.sqlite3
+# Misc
+*.zip
+"@ | Out-File -FilePath .\.gitignore -Encoding utf8
