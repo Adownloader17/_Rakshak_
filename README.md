@@ -131,8 +131,6 @@ $env:PYTHONPATH='C:\path\to\Rakshak\rakshak'; .\.venv\Scripts\python.exe src\mod
 
 - After editing package files, reload VS Code (Developer: Reload Window) so language servers rescan the workspace.
 
----
 
-If you'd like, I can apply the recommendations: add package `__init__.py` files, add a minimal `url_features.py` and `xss_features.py` implementation, or add scripts to automate training and serving the API.
 
 
