@@ -1,12 +1,4 @@
-﻿
-
-# Rakshak
-
-Rakshak is a small security-focused project that provides simple feature extraction and ML models for detecting web attacks (phishing URLs and XSS payloads). It contains backend API code, model training scripts, example datasets, and a lightweight React frontend demo.
-
-This README covers the repository overview, setup for local development (backend + frontend), and quick commands to run the API and UI.
-
-# Rakshak
+﻿# Rakshak
 
 Rakshak is a small security-focused project that provides simple feature extraction and ML models for detecting web attacks (phishing URLs and XSS payloads). It contains backend API code, model training scripts, example datasets, and a lightweight React frontend demo.
 
