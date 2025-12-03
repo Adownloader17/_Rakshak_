@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small theme helpers */
+:root {
+  --bg: #0f1724;
+  --card: rgba(255,255,255,0.03);
+}
+
+html.dark {
+  --bg: #0b1220;
+}
+
+/* small custom utilities (optional) */
+.progress-track { @apply bg-gray-700 rounded-full h-3 overflow-hidden; }
+.progress-fill { @apply h-3 rounded-full; }
+
+/* small custom classes used by App */
+.card { @apply bg-gray-800/20; }
+.tab { @apply px-3 py-1 rounded-md text-sm bg-transparent border border-transparent; }
+.tab.active { @apply bg-primary-500/20 border-primary-500/30 text-white; }
+.btn { @apply rounded-md font-medium; }
+.btn.primary { @apply bg-primary-500 px-4 py-2 text-white; }
+.btn.ghost { @apply border border-gray-700 px-4 py-2 text-gray-200 bg-transparent; }
+.result { @apply rounded-xl; }

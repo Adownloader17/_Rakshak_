@@ -1,0 +1,13 @@
+fastapi>=0.70
+uvicorn[standard]>=0.18
+pydantic>=1.8
+pandas>=1.3
+numpy>=1.21
+scikit-learn>=1.0
+lightgbm>=3.3
+joblib>=1.1
+
+# Optional / dev tools
+# jupyterlab
+# black
+# python-dotenv

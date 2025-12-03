@@ -1,0 +1,41 @@
+/* tw-local.css - small helper classes for the app when using CDN.
+   This replaces @apply usage and small custom utilities.
+*/
+
+/* subtle page background (optional) */
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:#071023;
+  color:#fff;
+}
+
+/* Generic card */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  padding:1rem;
+  border-radius:1rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* Tab look */
+.tab { padding:.4rem .75rem; border-radius:.5rem; background:transparent; border:1px solid transparent; cursor:pointer; }
+.tab.active { background: rgba(37,99,235,0.12); border:1px solid rgba(37,99,235,0.18); color: white; }
+
+/* Button base */
+.btn { border:none; padding:.6rem 1rem; border-radius:.6rem; font-weight:600; cursor:pointer; }
+.btn.primary { background: linear-gradient(90deg,#2b6ef6,#1e5de6); color:#fff; }
+.btn.ghost { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff; }
+
+/* Progress */
+.progress-track { background: rgba(255,255,255,0.04); border-radius:999px; height:0.6rem; overflow:hidden; }
+.progress-fill { height:100%; display:block; }
+
+/* Small utilities used by App */
+.result { border-radius: .75rem; padding: .75rem; border:1px solid rgba(255,255,255,0.03); background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); }
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Helvetica Neue", monospace; }
+
+/* Responsive container */
+.app-container { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
