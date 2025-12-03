@@ -1,21 +1,26 @@
-# Python virtualenv
+# Python
 .venv/
 venv/
 __pycache__/
+*.pyc
 
-# Node / frontend
+# Node
 node_modules/
 dist/
 build/
+.vite/
 
-# Data (do NOT keep raw data in repo)
+# Data (do NOT keep raw datasets in repo)
 data/raw/
 data/processed/
 
-# IDE/editor
+# Editor / OS
 .vscode/
-*.log
-
-# OS
+.idea/
 .DS_Store
 Thumbs.db
+*.log
+
+# Others
+.env
+*.sqlite3
